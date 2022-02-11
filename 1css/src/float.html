@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-width: 550px;
+        }
+        .header{
+            background-color: aliceblue;
+            text-align: center;
+        }
+        .footer{
+            clear: both;
+            background-color: beige;
+            text-align: center;
+        }
+        #main{
+            background-color: aquamarine;
+            width: 100%;
+        }
+        #left{
+            background-color: blueviolet;
+            width: 200px;
+            margin-left: -100%;
+            /* 相对自身移动 */
+            position: relative;
+            right: 200px;
+        }
+        #right{
+            background-color: chocolate;
+            width: 150px;
+            margin-right: -150px;
+        }
+
+        .container{
+            padding-left: 200px;
+            padding-right: 150px;
+        }
+        .container .column{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        圣杯布局和双飞翼布局的目的
+            三栏布局，中间一栏最先加载和渲染（内容最重要）
+            两侧内容固定，中间内容随着宽度自适应
+            一般用于pc网页
+    -->
+    <div class="header">
+        header
+    </div>
+    <div class="container">
+        <div id="main" class="column"> center </div>
+        <div id="left" class="column"> left </div>
+        <div id="right" class="column"> right </div>
+    </div>
+    <div class="footer">
+        footer
+    </div>
+</body>
+</html>
