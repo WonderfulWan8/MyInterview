@@ -13,6 +13,8 @@ element方面，用过table，notificationm，pagination，loading，dialog，to
 
 git方面，一般开发的时候如果是bug就先从master上切一个hotfix分支，自己改bug，测试，然后本地merge master提merge request，版本开发的话就从developer切一个最新的分支去进行开发
 
+js方面，对原型、原型链有一定了解，会使用es6语法class，了解面向对象编程思想，实例化对象等
+
 有个小小的建议给到您，就是我在浏览官网的时候，发现三个小小的问题
 第一个是下方展示的框框对网站内容有遮挡，这个改下高就可以
 第二是iconfont字体图标有情况会挂掉，我昨天和今天都发现了这个问题，但是没有找到具体复现的步骤
