@@ -13,16 +13,16 @@
 #CSS
 ##布局1
 ###盒模型宽度计算
-![节点](/1css/css1.png) 
+![节点](css1.png) 
 
     offsetWidth = (内容宽度+内边距+边框)，无外边距;
                 = 122px
 
 如果需要让offsetWidht = 100px，如何做到？
-![节点](/1css/css2.png)
+![节点](./css2.png)
   
 ###margin纵向重叠问题
-![节点](/1css//css3.png)
+![节点](./css3.png)
 
     相邻元素的margin-top和margin-bottom会发生重叠（以大的为主）
     空的内容<p\></p\>也会发生重叠
@@ -54,7 +54,7 @@ BFC常见应用：
 ####实现圣杯布局和双飞翼布局
 见文件
 ####手写clearfix
-![节点](/1css//css6.png)
+![节点]( ./css6.png)
     
 ###flex布局
     常用语法：
@@ -64,7 +64,7 @@ BFC常见应用：
         flex-wrap,
         align-self
 ####实现三点色子
-![节点](/1css//css4.png)
+![节点](./css4.png)
 
 ##定位
 ####absolute和relative分别依据什么定位？
@@ -98,7 +98,7 @@ BFC常见应用：
 
 
 ####line-height如何继承
-![节点](/1css//css5.png)
+![节点]( ./css5.png)
 子标签继承父标签行高
     写具体数值，如30px，则继承该值
     写比例，如2/1.5，则继承该比例（ 子行高 = 子行高*比例）
