@@ -27,3 +27,13 @@ const arr = ['a', 'b', 'c']
 const n = null // 特殊引用类型，指针指向为空地址
 // 特殊引用类型，但不用于存储数据，所以没有“拷贝、复制函数”这一说
 function fn() {}
+
+
+
+// 题目
+const obj1 = { x: 100, y: 200 };
+const obj2 = obj1;
+let x1 = obj1.x;
+obj2.x = 101;
+x1 = 102
+console.log(obj1);//{ x: 101 }
