@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 闭包的记忆性
+        function createChecktTemp(temp) {
+            function checkTemp(n){
+                if( n >= temp ){
+                    alert('你的体温偏高');
+                } else {
+                    alert('你的体温偏低');
+                }
+            }
+            return checkTemp;
+        }
+
+        var checkTemp_A = createChecktTemp(37.1);
+        checkTemp_A(37.0);
+        checkTemp_A(37.2);
+        var checkTemp_B = createChecktTemp(37.3);
+        checkTemp_B(37.4);
+        checkTemp_B(36.2);
+        
+        // 闭包的模拟私有变量
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
