@@ -19,4 +19,4 @@ function fn1(a, b, c){
 }
 const fn2 = fn1.bind( {x: 100}, 10, 20, 30 );
 const res = fn2();
-console.log(res);
+console.log("res:",res);
