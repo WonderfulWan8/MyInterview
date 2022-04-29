@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+    // 封装一个函数，这个函数可以返回元素的所有元素兄弟节点
+        function getAllElementSibling(node) {
+            // 前面的元素兄弟节点
+            var prevs = [];
+            // 后面的的元素兄弟节点
+            var nexts = [];
+            var o = node;
+            console.log("o:",o);
+            console.log("o.previousSibling",o.previousSibling);
+            while (o.previousSibling != null) {
+                if (o.previousSibling.nodeType == 1) {
+                    prevs.unshift(o.previousSibling);
+                }
+                o = o.previousSibling;
+            }
+
+            // var o = node;
+            console.log("o.nextSibling", o.nextSibling );
+            while (o.nextSibling != null) {
+                if (o.nextSibling.nodeType == 1) {
+                    nexts.push(o.nextSibling);
+                }
+                o = o.netxSibling;
+            }
+            // 将两个数组进行合并，然后返回
+            return prevs.concat(nexts);
+        }
+        
+        // console.log(124);
+        // let node1 = document.getElementById('para');
+        // console.log(getAllElementSibling('node1'));
+        let node1 = getAllElementSibling(document.getElementById('para'))
+        console.log(node1);
+
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <p>我是段落</p>
+        <p id="para">我是段落</p>
+        <p>我是段落</p>
+    </div>
+</body>
+
+</html>

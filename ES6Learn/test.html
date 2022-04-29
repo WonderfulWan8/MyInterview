@@ -1,0 +1,100 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: fudengwei_2202472
+ * @Date: 2022-03-17 14:58:06
+ * @LastEditTime: 2022-03-17 15:30:03
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+       
+    <script>
+        var box = document.getElementById('box');
+        var para = document.getElementById('para');
+
+        console.log('box:',box);
+
+        // 封装一个函数，这个函数可以返回元素的所有子元素节点（兼容到IE6），类似children的功能
+        function getChildren(node) {
+            // 结果数组
+            var children = [];
+            // 遍历node这个节点的所有子节点，判断每个子节点的nodeType属性是不是1
+            // 如果是1，就推入结果数组
+            console.log("node:",node);
+            console.log("node.childNodes:",node.childNodes)
+            for (var i = 0; i < node.childNodes.length; i++) {
+                if (node.childNodes[i].nodeType == 1) {
+                    children.push(node.childNodes[i]);
+                }
+            }
+            return children;
+        }
+        window.onload = function(){
+            console.log(getChildren( document.getElementById('box') ));
+        }
+
+
+
+
+        // 封装一个函数，这个函数可以返回元素的前一个元素兄弟节点（兼容到IE6），类似previousElementSibling的功能；
+        function previousElementSibling(node) {
+            var o = node;
+            console.log("node1:",node);
+            // 使用while语句
+            while (o.previousElementSibling != null) {
+                if (o.previousElementSibling.nodeType == 1) {
+                    // 循环结束，找到了
+                    return o.previousElementSibling;
+                }
+                // 让o成为它前一个节点
+                o = o.previousElementSibling;
+            }
+        }
+        
+        // window.onload = function(){
+        //     console.log(previousElementSibling(document.getElementById('para')));
+        // }
+        
+        // 封装一个函数，这个函数可以返回元素的所有元素兄弟节点
+        function getAllElementSibling(node) {
+            // 前面的元素兄弟节点
+            var prevs = [];
+            // 后面的的元素兄弟节点
+            var nexts = [];
+            var o = node;
+            while (o.previousSibling != null) {
+                if (o.previousSibling.nodeType == 1) {
+                    prevs.unshift(o.previousSibling);
+                }
+                o = o.previousSibling;
+            }
+            var o = node;
+            while (o.nextSibling != null) {
+                if (o.nextSibling.nodeType == 1) {
+                    nexts.push(o.nextSibling);
+                }
+                o = o.netxSibling;
+            }
+            // 将两个数组进行合并，然后返回
+            return prevs.concat(nexts);
+        }
+
+    </script>
+</head>
+
+<body>
+        <div id="box">
+                <p>我是段落</p>
+                <p id="para">我是段落</p>
+                <p>我是段落</p>
+            </div>
+</body>
+
+</html>
