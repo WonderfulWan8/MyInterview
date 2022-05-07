@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // call,apply,bind的this指向第一个参数
+        function fn1(){
+            console.log(this);
+        }
+        fn1();//window
+
+        fn1.call( {x: 100} )//{ x:100 }
+        const fn2 = fn1.bind( { x:200 } )
+        fn2();//{ x:200 }
+
+        const zhangsan1 = {
+            name:'张三',
+            sayHi() {
+                // this 即当前对象
+                console.log(this);
+            },
+            wait(){
+                setTimeout( function(){
+                    // this === window
+                    // 函数被执行是setTimeout本身触发的执行
+                    console.log(this);
+                })
+            }
+        }
+
+        const zhangsan2 = {
+            name:'张三',
+            sayHi() {
+                // this 即当前对象
+                console.log(this);
+            },
+            wait(){
+                setTimeout( () => {
+                    // this 既当前对象
+                    // 箭头函数this取值，取上级作用域
+                    console.log(this);
+                })
+            }
+        }
+        
+        class People{
+            constructor(name){
+                this.name = name;
+                this.age = 20;
+            }
+            sayHi() {
+                console.log(this);
+            }
+        }
+        const zhangsan3 = new People('张三1');
+        zhangsan3.sayHi();//
+        const zhangsan4 = new People('张三2');
+        zhangsan4.sayHi();//
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

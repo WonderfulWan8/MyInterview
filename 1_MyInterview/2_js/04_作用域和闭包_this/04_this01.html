@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // function foo(){
+    //     console.log(this);
+    // }
+    // foo();// window
+    // var obj = {
+    //     fn: foo
+    // }
+    // obj.fn();//指向的是对象 
+
+    // foo.call( {a: 1} );// 指向的是a
+
+    // this的绑定规则
+    // 1、默认绑定 - 函数独立调用(独立指的是不在任何环境下)
+    // 案例1
+    // function foo() {
+    //     console.log('foo: ',this);
+    // }
+    // // foo();// window
+
+    // function fn(){
+    //     console.log('fn',this);
+    //     foo();
+    // }
+    // fn();//  window
+
+    // 案例2 
+    // function foo(){
+    //     console.log('foo', this);
+    // }
+    // var obj = {
+    //     fn: foo
+    // }
+    // var fn = obj.fn;
+    // fn();// window
+
+    // 2 隐式绑定
+    // 通过对象打点调用的方式
+    // var obj = {
+    //     fn1: function() {
+    //         console.log(this);
+    //     }
+    // }
+    // obj.fn1();
+
+    // 3 显式绑定
+    // call/apply方法
+    // function fn() {
+    //     console.log(this);
+    // }
+    // fn.call( {a: 1} );
+
+    // // 注意
+    // fn.call(undefined);//window
+    // fn.call(null);//window
+
+    // 内置绑定，定时器
+    // setTimeout(function(){
+    //     console.log(this);
+    // })
+
+    // var person = {
+    //     firstName: "Penelope",
+    //     secondName: "Barrymore",
+    //     showFullName: function(){
+    //         console.log(this.firstName + '  ' + this.secondName);
+    //     }
+    // }
+    // person.showFullName();//Penelope  Barrymore
+
+    // var firstName = "Peter", lastName = "Ally";
+    // function showFullName(){
+    //     console.log(this.firstName+ ' '+ this.lastName);
+    // }
+
+    // var person = {
+    //     firstName: "Penelope",
+    //     lastName: "Barrymore",
+    //     showFullName: function(){
+    //         console.log(this.firstName + '  ' + this.lastName);
+    //     }
+    // }
+    // showFullName();// Peter Ally
+
+    // window.showFullName();// Peter Ally
+
+    // person.showFullName();// Penelope  Barrymore
+
+    // var person = {
+    //     firstName   :"Penelope",
+    //     lastName    :"Barrymore",
+    //     showFullName:function () {
+    //         // “上下文环境”
+    //         console.log (this.firstName + " " + this.lastName);
+    //     }
+    // }
+    // person.showFullName();// Penelope Barrymore
+
+    // var anotherPerson = {
+    //     firstName: 'nick',
+    //     lastName: 'name',
+    // }
+    // // 使用apply方法将this设为特定的值
+    // person.showFullName.apply(anotherPerson);// nick name
+    
+    // var user = {
+    //     data:[
+    //         {name: "T.Woods", age:37},
+    //         {name: "P.Mickelson", age:43},
+    //     ],
+    //     clickHandler:function(event){
+    //         var randomNum = ( (Math.random() * 2 | 0 ) +1 ) - 1;
+    //         console.log(this.data[randomNum].name + " " + this.data[randomNum].age);
+    //     }
+    // }
+    // $("button").click (user.clickHandler);
+
+//     var name = 'window'
+
+// var person1 = {
+//   name: 'person1',
+//   show1: function () {
+//     console.log(this.name) 
+//   },
+//   show2: () => console.log(this.name),
+//   show3: function () {
+//     return function () {
+//       console.log(this.name)
+//     }
+//   },
+//   show4: function () {
+//     return () => console.log(this.name)
+//   }
+// }
+// var person2 = { name: 'person2' }
+
+// person1.show1()// person1
+// person1.show1.call(person2)// person2
+
+// person1.show2()// window
+// person1.show2.call(person2)// window
+
+// person1.show3()()
+// person1.show3().call(person2)
+// person1.show3.call(person2)()
+
+// person1.show4()()
+// person1.show4().call(person2)
+// person1.show4.call(person2)()
+
+// var obj = {
+//     a: 'yuguang',
+//     getName: function(){
+//         console.log( this === obj );
+//         console.log( this.a );
+//     }
+// }
+// obj.getName();//true yuguang
+
+    // window.name = '老王'
+    // var obj = {
+    //     name: 'yugaung',
+    //     getName: function(){
+    //         console.log(this.name);
+    //     }
+    // }
+    // var getNew = obj.getName;
+    // getNew();// 老王
+    // obj.getName();// yugaung
+
+    var MyClass = function(){
+        this.name = 'yuguang';
+    }
+    var obj = new MyClass();
+    console.log(obj.name);// yuguang
+</script>
