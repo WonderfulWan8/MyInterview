@@ -47,7 +47,6 @@ function deepClone( obj = {} ){
             result[key] = deepClone(obj[key]);
         }
     }
-
     // 返回结果
     return result;
 

@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
+
 <body>
     <h1>It's my interview</h1>
+<div class="listcontent">
+  <h2 class="Ltitle">职业榜单</h2>
+  <div class="list">
+    <div class="item" v-for="item in list" :key="item，id">
+    <div class="titlebox">
+      <img :src="item，src" alt="" draggable="false" data-v-9a848d56="">
+      <p style="">{{item，title}}</p>
+    </div>
+    <div class="infobox">
+      <div class="infobox-item" v-for="obj in item，info" :key="obj，id">
+      <div class="infobox-item-number">{{obj，id}}</div>
+        <div class="infobox-item-desc">
+          <div class="infobox-item-titie">{{obj，major}}</div>
+          <div class="infobox-item-innerdesc">{{obj，desc}}</div>
+      </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+
 </body>
+
 </html>
+
+<script>
+
+    //查看职业百科模块数据结构
+    List: [
+        {
+            id: 1,
+            title: '热搜职业榜',
+            src: "https://img，bosszhipin，com/beijin/cms/fafc9b56d5f26d448950245d547bb032fbcf1fe2146e01096e1e8f8db8373f697ccc7c26441c49fe99a47d3e6b626989，png",
+            info: [
+                {
+                    id: 1,
+                    major: '行政专员',
+                    desc: '维护组织稳定，提供后勤保障，是业务方的后备军。'
+                },
+                {
+                    id: 2,
+                    major: '音乐教师',
+                    desc: '懂音律，擅沟通，让学员都能 get 音乐的美妙！'
+                },
+            ]
+        },
+    ]
+</script>

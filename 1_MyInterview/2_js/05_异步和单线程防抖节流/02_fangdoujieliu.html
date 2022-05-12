@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+/**
+ * 节流函数：一个函数执行一次后，只有大于设定的执行周期才会执行第二次。
+ * 有个需要频繁触发的函数，出于性能优化的角度，在规定时间内，只让函数
+ * 触发的第一次有效，后面不生效
+ * @param fn 要被节流的函数
+ * @param delay 规定的时间
+ */
+ function throttle(fn,delay){
+    let lastTime = 0;
+    return function(){
+        // 记录当前函数触发的时间
+        let nowTime = Date.now();
+        if(nowTime - lastTime > delay){
+            // 修正this指向问题
+            fn.call(this);
+        }
+        // 同步执行结束时间
+        lastTime = nowTime;
+    }
+ }
+
+
+</script>
