@@ -9,6 +9,14 @@ const b = 100 + '10' // '10010'
 const c = true + '10' // 'true10'
 console.log( 100 + parseInt('10') ); // 110
 
+ /**
+ * truly或者falsely变量是经过两次 ! 运算的变量 
+ * 
+ * truly变量： !!a === true的变量
+ * 
+ * falsely变量： !!a === false的变量
+ */ 
+
 /**
  *  == 会隐式类型转换然后尝试相等，会导致很多意想不到的结果
  */
