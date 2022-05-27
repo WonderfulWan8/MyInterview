@@ -1,0 +1,29 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <select
+        name="fh_cp"
+        οnchange="bao(this.options[this.options.selectedIndex].value)"
+        style="width: 200px"
+      >
+        <option value="John">John</option>
+        <option value="Michael">Michael</option>
+        <option value="Michael">Maria</option>
+        <option value="Lohgen">Lohgen</option>
+      </select>
+  </body>
+</html>
+<script language="JavaScript">
+    function bao(s)
+    {
+        txt.value+=s;
+    }
+  </script>

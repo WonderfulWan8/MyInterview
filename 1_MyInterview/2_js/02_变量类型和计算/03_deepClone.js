@@ -60,4 +60,4 @@ console.log(obj3.address.city);
 //     console.log(obj3.address.a[i]);
 // }
 // console.log(obj3);
-console.table(obj3.address.a);
+console.table(obj3.address.a);                                   
