@@ -157,36 +157,38 @@
 // console.log(null == undefined);
 // console.log(NaN == NaN);
 
-function getSkuKeys(list) {
-  if (!list || !list.length) {
-    return [];
-  }
-  let result = [[]];
-  let result1 = [];
+// function getSkuKeys(list) {
+//   if (!list || !list.length) {
+//     return [];
+//   }
+//   let result = [[]];
+//   let result1 = [];
 
-  for (let item of list) {
-    let res = [];
-    let str = '';
+//   for (let item of list) {
+//     let res = [];
+//     let str = '';
 
-    for (let compose of result) {
-      for (let key of item) {
-        res.push(compose.concat(key));
-      }
-    }
-    result = res;
-  }
-  for(let i = 0 ; i < result.length ; i++ ){
-    str = result[i].join('-');
-    result1.push(str);
-  }
-  console.log("result1:",result1);
-  return result;
-}
-const specList = [
-  ["red","yellow"],
-  ["XL","S"],
-  ["a1","a2"],
-  ["b1","b2"],
-]
-console.log(getSkuKeys(specList));
-console.log(getSkuKeys(specList).indexOf([ 'red', 'XL', 'a2', 'b1' ]));
+//     for (let compose of result) {
+//       for (let key of item) {
+//         res.push(compose.concat(key));
+//       }
+//     }
+//     result = res;
+//   }
+//   for(let i = 0 ; i < result.length ; i++ ){
+//     str = result[i].join('-');
+//     result1.push(str);
+//   }
+//   console.log("result1:",result1);
+//   return result;
+// }
+// const specList = [
+//   ["red","yellow"],
+//   ["XL","S"],
+//   ["a1","a2"],
+//   ["b1","b2"],
+// ]
+// console.log(getSkuKeys(specList));
+// console.log(getSkuKeys(specList).indexOf([ 'red', 'XL', 'a2', 'b1' ]));
+
+console.log( [] === [] );
