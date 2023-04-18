@@ -1,0 +1,47 @@
+!SESSION 2023-04-17 09:43:52.953 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage E:\jiuye\前端面经.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage E:\jiuye\前端面经.xmind
+
+!ENTRY org.xmind.cathy 1 0 2023-04-17 09:43:59.035
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2023-04-17 09:43:59.036
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2023-04-17 09:44:01.420
+!MESSAGE Path queued to be opened: E:\jiuye\前端面经.xmind
+
+!ENTRY org.xmind.cathy 1 0 2023-04-17 09:44:03.768
+!MESSAGE Ready to open files: [E:\jiuye\前端面经.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2023-04-17 09:44:03.793
+!MESSAGE Malformed URI: E:\jiuye\前端面经.xmind
+
+!ENTRY org.xmind.core.command.remote.lan 2 23333 2023-04-17 09:44:05.154
+!MESSAGE Bonjour installation is not found or damaged.
+!STACK 0
+java.lang.UnsatisfiedLinkError: no jdns_sd in java.library.path
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1867)
+	at java.lang.Runtime.loadLibrary0(Runtime.java:870)
+	at java.lang.System.loadLibrary(System.java:1122)
+	at com.apple.dnssd.AppleDNSSD.<clinit>(DNSSD.java:544)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at com.apple.dnssd.DNSSD.<clinit>(DNSSD.java:477)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.xmind.core.internal.command.remote.lan.LANDiscoveryServiceAdapter.<init>(LANDiscoveryServiceAdapter.java:43)
+	at org.xmind.core.internal.command.remote.lan.LANDiscoveryServiceFactory.createDomainService(LANDiscoveryServiceFactory.java:39)
+	at org.xmind.core.internal.command.remote.CommandServiceDomainImpl.createDomainService(CommandServiceDomainImpl.java:71)
+	at org.xmind.core.internal.command.remote.CommandServiceDomainImpl.getRemoteCommandServiceDiscoverer(CommandServiceDomainImpl.java:135)
+	at org.xmind.core.internal.sharing.LocalNetworkSharingService.activate(LocalNetworkSharingService.java:357)
+	at org.xmind.ui.internal.sharing.ToggleSharingServiceStatusJob.activate(ToggleSharingServiceStatusJob.java:78)
+	at org.xmind.ui.internal.sharing.ToggleSharingServiceStatusJob.run(ToggleSharingServiceStatusJob.java:49)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.xmind.ui.mindmap 4 4 2023-04-17 19:54:43.679
+!MESSAGE [save] start...[save] add state...[save] clean...[save] doSave start...[save] doSaveWorkbookToTempStorage start...[save] doSaveWorkbookToTempStorage over...[save] doSaveWorkbookToURIFromSource start...[save] new file...[save] serialize start...[save] new FileOutputStream...[save] setOutputStream...[save] serialize success...[save] doSaveWorkbookToURIFromSource over...[save] doSave over...[save] success...over...

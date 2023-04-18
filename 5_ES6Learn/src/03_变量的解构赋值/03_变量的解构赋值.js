@@ -25,10 +25,10 @@
 // console.log(x);
 // console.log(y);
 
-// let [a, [b], d] = [1, [2, 3], 4];
-// console.log(a);
-// console.log(b);
-// console.log(d);
+let [a, [b], d] = [1, [2, 3], 4];
+console.log(a);
+console.log(b);
+console.log(d);
 
 // let [x, y, z] = new Set( ['a','b','c'] );
 // console.log(x);
@@ -199,21 +199,21 @@
 // }
 // console.log("------------------");
 
-var userMsg = {
-    nick:{
-        name:'nick',
-        age: 18,
-        sex: '男'
-    },
-    freddy:{
-        name:'freddy',
-        age: 24,
-        sex: '男'
-    }
-}
-for( let key1 in userMsg ) {
-    console.log("key1:",key1);
-    for( let key2 in userMsg[key1] ){
-        console.log("item:", userMsg[key1][key2]);
-    }
-}
+// var userMsg = {
+//     nick:{
+//         name:'nick',
+//         age: 18,
+//         sex: '男'
+//     },
+//     freddy:{
+//         name:'freddy',
+//         age: 24,
+//         sex: '男'
+//     }
+// }
+// for( let key1 in userMsg ) {
+//     console.log("key1:",key1);
+//     for( let key2 in userMsg[key1] ){
+//         console.log("item:", userMsg[key1][key2]);
+//     }
+// }
