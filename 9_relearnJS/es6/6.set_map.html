@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="1"></div>
+  <div id="2"></div>
+  <div id="3"></div>
+  <div id="4"></div>
+  <script>    
+    // 数组去重
+    const s = new Set();
+    [2,3,4,5,5,2,2,].forEach(x => s.add(x))
+    console.log(s)
+    for(let i of s){
+      console.log(i);//2 3 4 5
+    }
+    let arr = [1,2,2,3,4,5,5,4,4,2,1]
+    let t = new Set(arr);
+    console.log('t: ', t);//t:  Set(5) {1, 2, 3, 4, 5}
+    
+    // 字符串去重
+    let str = 'aaabbcscdsa';
+    let s1 = [...new Set(str)].join('');
+    console.log('s1: ', s1);//s1:  abcsd
+
+    // NaN
+    let set3 = new Set();
+    let a = NaN;
+    let b = NaN;
+    set3.add(a);
+    set3.add(b);
+    console.log(set3);//Set(1) {NaN}
+  </script>
+</body>
+</html>
