@@ -268,81 +268,139 @@
 // console.log('arr7: ', arr7);
 
 /**
- * 1.数组的去重
- */
-let arr = [1, 2, 3, 4, 3, 7, 7];
-let set = new Set([...arr]); //set:  Set(5) { 1, 2, 3, 4, 7 }
+//  * 1.数组的去重
+//  */
+// let arr = [1, 2, 3, 4, 3, 7, 7];
+// let set = new Set([...arr]); //set:  Set(5) { 1, 2, 3, 4, 7 }
 
-let newArr = [];
-arr.forEach((ele) => {
-  if (newArr.indexOf(ele) == -1) {
-    newArr.push(ele);
-  }
-});
-console.log('newArr: ', newArr); //[ 1, 2, 3, 4, 7 ]
+// let newArr = [];
+// arr.forEach((ele) => {
+//   if (newArr.indexOf(ele) == -1) {
+//     newArr.push(ele);
+//   }
+// });
+// console.log('newArr: ', newArr); //[ 1, 2, 3, 4, 7 ]
 
-/**
- * 2.数组的扁平化
- */
+// /**
+//  * 2.数组的扁平化
+//  */
+// let res = [1, 2, [3, [4, [5]]]];
+// // res.flat(Infinity); //[1,2,3,4,5] Infinity代表扁平化最大层 不传参默认一层
+
+// function reduceFlatten(arr) {
+//   return arr.reduce((result, item) => {
+//     return result.concat(Array.isArray(item) ? reduceFlatten(item) : item);
+//   }, []);
+// }
+// console.log(reduceFlatten(res)); //[ 1, 2, 3, 4, 5 ]
+
+// function myFlatten(arr) {
+//   let result = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       result = result.concat(myFlatten(arr[i]));
+//     } else {
+//       result.push(arr[i]);
+//     }
+//   }
+//   return result;
+// }
+// console.log(myFlatten(res)); //[ 1, 2, 3, 4, 5 ]
+
+// /**
+//  * 3.取数组最大值
+//  */
+// let arr2 = [1, 2, 3, 4, 5];
+// Math.max(...arr2);
+
+// arr2.sort((a, b) => a - b);
+// console.log('arr2[arr2.length - 1]: ', arr2[arr2.length - 1]); //5
+
+// /**
+//  * 4.数组是否包含指定元素
+//  */
+// let animals = ['A', 'B', 'C', 'D'];
+// animals.includes('A'); // true
+
+// animals.indexOf('A') != -1;
+
+// /**
+//  * 5.删除数组中的指定元素
+//  */
+// let selectData = [
+//   { depId: 44, name: '西安' },
+//   { depId: 33, name: '北京' },
+//   { depId: 23, name: '上海' },
+//   { depId: 35, name: '广州' },
+//   { depId: 64, name: '深圳' },
+// ];
+
+// // 要在数组中删除的数据
+// let data = { depId: 23, name: '上海' };
+
+// let sub;
+// selectData.forEach((ele, index) => {
+//   if (ele.depId == data.depId) {
+//     sub = index;
+//   }
+// });
+// selectData.splice(sub, 1);
+// console.log('selectData: ', selectData);
+
 let res = [1, 2, [3, [4, [5]]]];
-// res.flat(Infinity); //[1,2,3,4,5] Infinity代表扁平化最大层 不传参默认一层
+// res.flat(Infinity);
 
-function reduceFlatten(arr) {
-  return arr.reduce((result, item) => {
-    return result.concat(Array.isArray(item) ? reduceFlatten(item) : item);
-  }, []);
-}
-console.log(reduceFlatten(res)); //[ 1, 2, 3, 4, 5 ]
-
-function myFlatten(arr) {
+function myflatten(arr) {
   let result = [];
   for (let i = 0; i < arr.length; i++) {
     if (Array.isArray(arr[i])) {
-      result = result.concat(myFlatten(arr[i]));
+      result = result.concat(myflatten(arr[i]));
     } else {
       result.push(arr[i]);
     }
   }
   return result;
 }
-console.log(myFlatten(res)); //[ 1, 2, 3, 4, 5 ]
+res = myflatten(res);
+console.log('res: ', res);
 
-/**
- * 3.取数组最大值
- */
-let arr2 = [1, 2, 3, 4, 5];
-Math.max(...arr2);
+let max = Math.max(...res);
+console.log('max: ', max);
 
-arr2.sort((a, b) => a - b);
-console.log('arr2[arr2.length - 1]: ', arr2[arr2.length - 1]); //5
-
-/**
- * 4.数组是否包含指定元素
- */
-let animals = ['A', 'B', 'C', 'D'];
-animals.includes('A'); // true
-
-animals.indexOf('A') != -1;
-
-/**
- * 5.删除数组中的指定元素
- */
-let selectData = [
-  { depId: 44, name: '西安' },
-  { depId: 33, name: '北京' },
-  { depId: 23, name: '上海' },
-  { depId: 35, name: '广州' },
-  { depId: 64, name: '深圳' },
-];
-
-// 要在数组中删除的数据
-let data = { depId: 23, name: '上海' };
-
-let sub;
-selectData.forEach((ele, index) => {
-  if (ele.depId == data.depId) {
-    sub = index;
-  }
+res.sort((a, b) => {
+  return a - b;
 });
-selectData.splice(sub, 1);
-console.log('selectData: ', selectData);
+console.log(res[res.length - 1]);
+
+console.log('res.includes(5): ', res.includes(5));
+console.log('res.indexOf(5) != -1: ', res.indexOf(5) != -1);
+
+let obj = {};
+for (let i = 0; i < res.length; i++) {
+  if (typeof obj[res[i]] === 'undefined') {
+    obj[res[i]] = 1;
+  } else {
+    obj[res[i]]++;
+  }
+}
+console.log('obj: ', obj);
+
+let set = new Set();
+res.forEach((e) => {
+  set.add(e);
+});
+console.log('set: ', set);
+let newArr = [];
+set.forEach((e) => {
+  newArr.push({ val: e, count: 0 });
+});
+
+for (let i = 0; i < res.length; i++) {
+  newArr.forEach((e) => {
+    if (e.val == res[i]) {
+      e.count++;
+    }
+  });
+}
+
+console.log('newArr: ', newArr);
