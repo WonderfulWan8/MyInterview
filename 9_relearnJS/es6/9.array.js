@@ -97,6 +97,7 @@
 // // slice的重要应用，将 类似数组的对象 转换为 数组
 // let objToArr = Array.prototype.slice.call({ 0: 'a', 1: 'b', length: 2 });
 // console.log('objToArr: ', objToArr); //[ 'a', 'b' ]
+// console.log(g.slice());//slice没有参数相当于返回一个原数组的拷贝
 
 // // splice用于删除数组的一部分，并且可以在删除的位置添加新的元素，
 // // 返回值是被删除的元素，该方法会改变原数组

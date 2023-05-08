@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function loadXMLDoc(){
+     var xmlhttp;
+     if(window.XMLHttpRequest){
+      xmlhttp = window.XMLHttpRequest
+     }else{
+      xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+     }
+     xmlhttp.onReadyStateChange = function(){
+      if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+        document.getElementById.innerHTML = xmlhttp.responseText;
+      }
+     }
+     xmlhttp.open("GET","ajax_info.txt",true);
+     xmlhttp.send();
+    }
+  </script>
+</head>
+<body>
+  <div id="myDiv"><h2>使用Ajax修改该文本内容</h2></div>
+  <button type="button" onclick="loadXMLDoc()">修改内容</button>
+</body>
+</html>
