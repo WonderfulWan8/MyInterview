@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="todo-list">
+    新增待办：<input v-model="nextText" type="text"> <button @click="add">新增</button>
+    <ul>
+      <li v-for="item in todos">
+        {{item.text}} <button @click="handleRemove(item.id)">remove</button>
+      </li>
+    </ul>
+  </div>
+  <script>
+    var todoList = new Vue({
+      el:'#todo-list',
+      data:{
+        todos:[
+          {
+            id:1,
+            text:"to-do-1"
+          },
+          {
+            id:2,
+            text:"to-do-2"
+          },
+          {
+            id:3,
+            text:"to-do-3"
+          }
+        ],
+        nextId:4,
+        nextText:'',
+      },
+      methods:{
+        handleRemove(id){
+          this.todos = this.todos.filter((ele)=>{
+            return ele.id !== id;
+          })
+        },
+        add(){
+          if(!this.nextText){
+            alert('请输入待办项~');
+            return
+          }
+          this.todos.push({
+            id:this.nextId++,
+            text:this.nextText
+          });
+          this.nextText = ''
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="example">
+    <p>原始字符串：{{message}}</p>
+    <p>反转字符串：{{reversedMessage}}</p>
+  </div>
+  <div id="app2">
+    {fullName}
+  </div>
+  <script>
+    var example = new Vue({
+      el:'#example',
+      data:{
+        message:'hello'
+      },
+      computed:{
+        reversedMessage:function(){
+          return this.message.split('').reverse().join('');
+        }
+      },
+      // methods:{
+      //   reversedMessage(){
+      //     return this.message.split('').reverse().join('');
+      //   }
+      // }
+    })
+    // example.message = '123'
+    /*
+    /**
+     * 对于复杂逻辑，需要使用计算属性
+     * 计算属性是基于它们的响应式依赖进行缓存的，只在相关依赖发生改变时才会重新求值。
+     * 这就意味着，只要message没有发生改变，
+     * 多次访问reversedMessage计算属性会立即返回之前的计算结果，不会再次执行函数。
+     * 为什么需要计算属性？
+     * 当操作一个性能开销较大的计算属性A，它需要遍历一个巨大的数组并做大量的计算。
+     * 如果有其他属性依赖A，如果没有缓存，将不可避免的对A执行多次操作。
+     * / 
+    */ 
+   var app2 = new Vue({
+    el:"#app2",
+    data:{
+      fullName:'Foo bar',
+      firstName:"Bar",
+      lastName:'Foo'
+    },
+    computed:{
+      fullName:{
+        get:function(){
+          return this.firstName + ' ' +this.lastName;
+        },
+        set:function(newValue){
+          var names = newValue.split('')
+          this.firstName = names[0],
+          this.lastName = names[names.length-1]
+        }
+      }
+    }
+   })
+  </script>
+</body>
+</html>

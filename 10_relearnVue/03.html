@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{foo}}
+    <button @click="foo = '213'">点我改变</button>
+  </div>
+  <div id="app2">
+
+  </div>
+  <script>
+    var data = {a:1}
+    var vm = new Vue({
+      data:data
+    })
+    console.log(vm.a == data.a);
+    var obj ={
+      foo:'bar',
+    }
+    Object.freeze(obj);
+    var app = new Vue({
+      el:'#app',
+      data:obj
+    })
+    var app2 = new Vue({
+      el:'#app2',
+      data:{
+        a:2
+      },
+      created:function(){
+        console.log('this is app'+ this.a);
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div 
+      class="static"
+      :class="{active:isActive,'text-danger':hasError}"
+    >
+      123
+    </div>
+    <div :class="classObject">456</div>
+    <div :style="styleObj">789</div>
+  </div>
+  <script>
+    var app = new Vue({
+      el:"#app",
+      data:{
+        isActive:true,
+        hasError:false,
+        styleObj:{
+          color:'red',
+          fontSize:'25px'
+        }
+      },
+      computed:{
+        classObject:function(){
+          return{
+            active:this.isActive && !this.error,
+            'text-danger': this.error && this.error.type === 'fatal'
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

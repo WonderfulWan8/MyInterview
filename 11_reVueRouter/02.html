@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router@3/dist/vue-router.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h2>hello world</h2>
+    <router-link to="/user">user</router-link>
+    <router-view></router-view>
+  </div>
+  <script>
+    const User = {
+      template:`
+      <div>
+        <h2>
+          <router-link to="/user/profile">UserProfile</router-link>
+          <router-link to="/user/posts">UserPosts</router-link>
+          
+        </h2>
+        <router-view></router-view>
+      </div>`
+    }
+    const UserProfile = {template:`
+      <div>
+        <h2>User UserProfile</h2>
+      </div>`}
+    const UserPosts = {template:`
+      <div>
+        <h2>User UserPosts</h2>
+      </div>`}
+    const routes = [
+      {
+        path:'/user',
+        component:User,
+        children:[
+          {
+            path:'profile',
+            component:UserProfile
+          },{
+            path:'posts',
+            component:UserPosts
+          }
+        ]
+      }
+    ]
+    const router = new VueRouter({routes:routes})
+    const app = new Vue({
+      el:"#app",
+      router
+    })
+  </script>
+</body>
+</html>
