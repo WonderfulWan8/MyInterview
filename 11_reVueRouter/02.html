@@ -12,6 +12,7 @@
   <div id="app">
     <h2>hello world</h2>
     <router-link to="/user">user</router-link>
+    <button @click="$router.push('/user/profile')">profile</button>
     <router-view></router-view>
   </div>
   <script>
@@ -21,7 +22,7 @@
         <h2>
           <router-link to="/user/profile">UserProfile</router-link>
           <router-link to="/user/posts">UserPosts</router-link>
-          
+
         </h2>
         <router-view></router-view>
       </div>`

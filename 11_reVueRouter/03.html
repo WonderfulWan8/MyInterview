@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router@3/dist/vue-router.js"></script>
+</head>
+<body>
+  <div id="app">
+    <router-link :to="{name:'user',params:{userId:123}}">User</router-link>
+    <router-view></router-view>
+  </div>
+  <script>
+    const User = {template:`<div>It's user </div>`}
+    const routes = [{
+      path:"/user/:userId",
+      name:'user',
+      component:User
+    }]
+    const router = new VueRouter({routes:routes})
+    const app = new Vue({
+      el:"#app",router
+    })
+  </script>
+</body>
+</html>
