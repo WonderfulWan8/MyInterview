@@ -106,7 +106,16 @@
 // a.call(window);
 // a.call(obj1);
 
-function add(a, b) {
-  return a + b;
-}
-add.call(1, 2);
+// function add(a, b) {
+//   return a + b;
+// }
+// add.call(1, 2);
+var obj = {
+  a: 10,
+  b: this.a + 10,
+  fn: function () {
+    return this.a;
+  },
+};
+console.log(obj.b);
+console.log(obj.fn(), obj.fn);

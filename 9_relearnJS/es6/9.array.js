@@ -348,60 +348,76 @@
 // selectData.splice(sub, 1);
 // console.log('selectData: ', selectData);
 
-let res = [1, 2, [3, [4, [5]]]];
+// let res = [1, 2, [3, [4, [5]]]];
 // res.flat(Infinity);
 
-function myflatten(arr) {
+// function myflatten(arr) {
+//   let result = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       result = result.concat(myflatten(arr[i]));
+//     } else {
+//       result.push(arr[i]);
+//     }
+//   }
+//   return result;
+// }
+// res = myflatten(res);
+// console.log('res: ', res);
+
+// let max = Math.max(...res);
+// console.log('max: ', max);
+
+// res.sort((a, b) => {
+//   return a - b;
+// });
+// console.log(res[res.length - 1]);
+
+// console.log('res.includes(5): ', res.includes(5));
+// console.log('res.indexOf(5) != -1: ', res.indexOf(5) != -1);
+
+// let obj = {};
+// for (let i = 0; i < res.length; i++) {
+//   if (typeof obj[res[i]] === 'undefined') {
+//     obj[res[i]] = 1;
+//   } else {
+//     obj[res[i]]++;
+//   }
+// }
+// console.log('obj: ', obj);
+
+// let set = new Set();
+// res.forEach((e) => {
+//   set.add(e);
+// });
+// console.log('set: ', set);
+// let newArr = [];
+// set.forEach((e) => {
+//   newArr.push({ val: e, count: 0 });
+// });
+
+// for (let i = 0; i < res.length; i++) {
+//   newArr.forEach((e) => {
+//     if (e.val == res[i]) {
+//       e.count++;
+//     }
+//   });
+// }
+
+// console.log('newArr: ', newArr);
+
+let res = [1, 2, [3, [4, [5]]]];
+
+function myFlatten(arr) {
   let result = [];
   for (let i = 0; i < arr.length; i++) {
     if (Array.isArray(arr[i])) {
-      result = result.concat(myflatten(arr[i]));
+      result = result.concat(myFlatten(arr[i]));
     } else {
       result.push(arr[i]);
     }
   }
   return result;
 }
-res = myflatten(res);
-console.log('res: ', res);
 
-let max = Math.max(...res);
-console.log('max: ', max);
-
-res.sort((a, b) => {
-  return a - b;
-});
-console.log(res[res.length - 1]);
-
-console.log('res.includes(5): ', res.includes(5));
-console.log('res.indexOf(5) != -1: ', res.indexOf(5) != -1);
-
-let obj = {};
-for (let i = 0; i < res.length; i++) {
-  if (typeof obj[res[i]] === 'undefined') {
-    obj[res[i]] = 1;
-  } else {
-    obj[res[i]]++;
-  }
-}
-console.log('obj: ', obj);
-
-let set = new Set();
-res.forEach((e) => {
-  set.add(e);
-});
-console.log('set: ', set);
-let newArr = [];
-set.forEach((e) => {
-  newArr.push({ val: e, count: 0 });
-});
-
-for (let i = 0; i < res.length; i++) {
-  newArr.forEach((e) => {
-    if (e.val == res[i]) {
-      e.count++;
-    }
-  });
-}
-
-console.log('newArr: ', newArr);
+console.log(myFlatten(res));

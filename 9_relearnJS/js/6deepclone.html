@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const oldObj = {
+      a:1,
+      b:['e','f','g'],
+      c:{
+        h:{
+          i:2
+        }
+      }
+    }
+    const newObj = JSON.parse(JSON.stringify(oldObj));
+    console.log(newObj.c.h,oldObj.c.h);
+    console.log(newObj.c.h === oldObj.c.h);
+    newObj.c.h.i = 3;
+    console.log(newObj.c.h,oldObj.c.h);
+    // function isArray(arr){
+    //   return Array.isArray(arr);
+    // }
+    function deepClone(obj){
+      if(typeof obj !== 'object' && typeof obj !== 'function'){
+        return obj;//基本类型直接返回
+      }
+      var o = Array.isArray(obj) ? []:{};
+      for(let key in obj){
+        if(obj.hasOwnProperty(key)){
+          o[key] = typeof obj[key] === 'object' ? deepClone(obj[key]):obj[key]
+        }
+      }
+      return o;
+    }
+    const newObj1 = deepClone(oldObj);
+    console.log(newObj1.c.h,oldObj.c.h);
+    console.log(newObj1.c.h === oldObj.c.h);
+    newObj1.c.h.i = 3;
+    console.log(newObj1.c.h,oldObj.c.h);
+</script>
+</body>
+</html>

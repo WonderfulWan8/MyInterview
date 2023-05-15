@@ -12,7 +12,13 @@ let data_type = [
   '11.Object.is()与比较操作符 "===" 、"=="的区别',
   '12.如何判断一个对象是空对象',
 ];
-let es6 = ['1.let const var 的区别', '2.如果new一个箭头函数会怎样', '3.箭头函数和普通函数的区别'];
+let es6 = [
+  '1.let const var 的区别',
+  '2.如果new一个箭头函数会怎样',
+  '3.箭头函数和普通函数的区别',
+  '4.ES6有哪些新增特性',
+  '5.for in 和 for of的区别',
+];
 let js_basic = [
   '1.new操作符的实现原理',
   '2.数组有哪些原生方法',
@@ -38,11 +44,11 @@ function getRandom(arr) {
   console.log(arr[index]);
 }
 getRandom(data_type);
-getRandom(es6);
-getRandom(js_basic);
-getRandom(yuanxing);
-getRandom(bibao_zhixing_zuoyongyu);
-getRandom(this_call_bind_apply);
-getRandom(yibu);
-getRandom(mianxiangduixiang);
-getRandom(garbage_collection);
+// getRandom(es6);
+// getRandom(js_basic);
+// getRandom(yuanxing);
+// getRandom(bibao_zhixing_zuoyongyu);
+// getRandom(this_call_bind_apply);
+// getRandom(yibu);
+// getRandom(mianxiangduixiang);
+// getRandom(garbage_collection);
