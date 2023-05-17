@@ -44,11 +44,21 @@ function getRandom(arr) {
   console.log(arr[index]);
 }
 getRandom(data_type);
-// getRandom(es6);
-// getRandom(js_basic);
-// getRandom(yuanxing);
-// getRandom(bibao_zhixing_zuoyongyu);
-// getRandom(this_call_bind_apply);
-// getRandom(yibu);
-// getRandom(mianxiangduixiang);
-// getRandom(garbage_collection);
+getRandom(es6);
+getRandom(js_basic);
+getRandom(yuanxing);
+getRandom(bibao_zhixing_zuoyongyu);
+getRandom(this_call_bind_apply);
+getRandom(yibu);
+getRandom(mianxiangduixiang);
+getRandom(garbage_collection);
+
+// 米小姐，您好，我可以接受外包。
+// 然后我也想和您简单聊一下我的想法，
+// 首先，我并不是刻意隐瞒我的学历是专升本，因为智联上的在线简历没有将我的信息同步过去。
+// 其次，即使是专升本，我在本、专科内能拿到前百分之一人才有的国家奖学金，且绩点排名都是专业第一、前五，我做的并不比别人差。
+// 最后，我明白咱们是国资性质的企业，但是不论是外包还是正式编制，最终都会落实和体现在工作能力上, 我对自己的能力有信心，如果我是个庸才，即使有编制，试用期也不一定能过。
+// 所以，我想再争取一下，希望您能给我一个机会，让我用实际的工作能力来证明自己。
+
+// 如果说因为学历的问题公司这边实在不能接受，我也向您道一声抱歉，因为我的疏忽耽误了您和面试官的宝贵时间。
+// 您这边实在为难的话，我

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    输入：<input type="text" v-model="text"/><br/>
+    改变名称：<input type="text" v-model="person.name"/>
+  </div>
+  <script>
+    const app = new Vue({
+      el:"#app",
+      data:{
+        text:"",
+        person:{
+          name:'张三'
+        }
+      },
+      methods:{
+
+      },
+      watch:{
+        text:{
+          handler(newVal,oldVal){
+            console.log(`新的值: ${newVal}`);
+            console.log(`旧的值: ${oldVal}`);
+            console.log("------------------");
+          }
+        },
+        'person.name':{
+          handler(newVal,oldVal){
+            console.log(`新的值: ${newVal}`);
+            console.log(`旧的值: ${oldVal}`);
+            console.log("------------------");
+          }
+        }
+      }
+    
+    })
+  </script>
+</body>
+</html>

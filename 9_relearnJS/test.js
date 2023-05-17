@@ -98,10 +98,7 @@ console.log(getCodeCount(str, 2));
 function getAllCodeCount(str) {
   let arr = Array.from(str);
   let arr3 = [];
-  let set = new Set();
-  arr.forEach((ele) => {
-    set.add(ele);
-  });
+  let set = new Set([...arr]);
   set.forEach((ele) => {
     arr3.push({ code: ele, count: 0 });
   });
